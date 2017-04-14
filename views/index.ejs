@@ -1,11 +1,125 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+ <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body class="w3-content" style="max-width:1300px">
+
+ <div class="section white">
+<!-- First Grid: Logo & About -->
+	<div class="w3-row">
+	  <div class="card w3-half w3-red w3-container w3-center" style="height:1200px">
+	    <div class="w3-padding-64">
+	      <h1>My Logo</h1>
+	    </div>
+	    <div class="w3-padding-64">
+	      <a href="#" class="w3-button w3-red w3-block w3-hover-blue-grey w3-padding-16">Home</a>
+	      <a href="#work" class="w3-button w3-red w3-block w3-hover-teal w3-padding-16">My Work</a>
+	      <a href="#work" class="w3-button w3-red w3-block w3-hover-dark-grey w3-padding-16">Resume</a>
+	      <a href="#contact" class="w3-button w3-red w3-block w3-hover-brown w3-padding-16">Contact</a>
+	    </div>
+	  </div>
+	  <div class="card w3-half w3-white w3-container" style="height:1200px">
+	  <ul id="tabs-swipe-demo" class="tabs w3-white">
+	    <li class="tab col s4 "><a class="active" href="#test-swipe-1">Login</a></li>
+	    <li class="tab col s4"><a  href="#test-swipe-2">Register</a></li>
+	  </ul>
+	  <div class="row">
+	    <div id="test-swipe-1" class="w3-padding-64 w3-padding-large red-text">
+	      <h1>Login</h1>
+	      <p class="w3-opacity">Proceed</p>
+	      <form class="w3-container w3-card-2 w3-padding-32 w3-white" action="/users/login" method="post">
+	        <div class="w3-section">
+	          <label>User Name</label>
+	          <input class="w3-input" style="width:100%;" type="text" required name="Name">
+	        </div>
+	        <div class="w3-section">
+	          <label>Password</label>
+	          <input class="w3-input" style="width:100%;" type="text" required name="password">
+	        </div>
+	        <button type="button" class="w3-button w3-teal w3-right">Send</button>
+	      </form>
+	    </div>
+	  </div>
+	  <div id="test-swipe-2" class="w3-padding-64 w3-padding-large red-text">
+	      <h1>Sign Up</h1>
+	      <p class="w3-opacity">Enter Your Details</p>
+	      <form method="post" class="w3-container w3-card-2 w3-padding-32 w3-white" action="/users/register">
+	        <div class="w3-section">
+	          <label>Name</label>
+	          <input class="w3-input" style="width:100%;" type="text" required name="Name">
+	        </div>
+	        <div class="w3-section">
+	          <label>Email</label>
+	          <input class="w3-input" style="width:100%;" type="text" required name="Email">
+	        </div>
+	        <div class="w3-section">
+	          <label>City</label>
+	          <input class="w3-input" style="width:100%;" type="text" required name="city">
+	        </div>
+	        <div class="w3-section">
+	          <label>State</label>
+	          <input class="w3-input" style="width:100%;" type="text" required name="state">
+	        </div>
+	        <div class="w3-section">
+	          <label>Country</label>
+	          <input class="w3-input" style="width:100%;" type="text" required name="country">
+	        </div>
+	        <div class="w3-section">
+	          <label>Pincode</label>
+	          <input class="w3-input" style="width:100%;" type="text" required name="pincode">
+	        </div>
+	        
+	        
+	        <button type="submit" class="w3-button w3-teal w3-right">Send</button>
+	      </form>
+	    </div>
+	  </div>
+	  </div>          
+	</div>
+</div>	
+
+
+<!-- Footer -->
+ <footer class="page-footer red">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+<!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	      $('.parallax').parallax();
+	    });
+</script>
+</body>
 </html>
