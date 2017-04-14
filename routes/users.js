@@ -17,7 +17,7 @@ router.post('/login', function(req, res, next) {
   	 	res.render('login', { 'user': user });
   	}
   	else{
-  		res.redirect('/login',{message: "No User Exists!!"});
+  		res.redirect('/',{message: "No User Exists!!"});
   	}
   });
   
@@ -51,7 +51,7 @@ router.post('/register', function(req, res, next) {
 				user.userId = 1+"s";
 				user.save(); 
 				console.log(user);
-				res.render('user',{user:user});
+				res.render('login',{user:user});
 			
 		}
 		

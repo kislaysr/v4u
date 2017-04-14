@@ -3,35 +3,338 @@
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<!-- chips   -->
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+      <script language="javascript">
+         angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('contactsChipController', contactsChipController);
+
+         function contactsChipController ($scope) {
+            var self = this;
+            self.querySearch = querySearch;
+            self.allContacts = loadContacts();
+            self.contacts = [self.allContacts[0]];
+            self.filterSelected = true;
+            
+            function querySearch (query) {
+               var results = query ?
+               self.allContacts.filter(createFilterFor(query)) : [];
+               console.log(results);
+               return results;
+            }
+
+            function createFilterFor(query) {
+               var lowercaseQuery = angular.lowercase(query);
+               return function filterFn(contact) {
+                  return (contact._lowername.indexOf(lowercaseQuery) != -1);;
+               };
+            }
+            
+            function loadContacts() {
+               var contacts = [
+                  'Headaches ',
+                  'Cramps ',
+                  'Red Eye ',
+                  'Chest Pain ',
+                  'Leg Pain ',
+                  'Weakness '
+                  
+               ];
+               return contacts.map(function (c, index) {
+                     var cParts = c.split(' ');
+                     var contact = {
+                        name: c,
+                        };
+                     contact._lowername = contact.name.toLowerCase();
+                     console.log(contact);
+                     return contact;
+               });
+            }
+         }                 
+      </script>      
+
+
+
+<!-- chips   -->
+
+
+
+
+
+
+
  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
  <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<body class="w3-content" style="max-width:1300px">
+<style type="text/css">
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
 
- <div class="section white">
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("http://cdn.realcoolvideos.com/wp-content/uploads/2016/12/headaches-doctor.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("http://cdn.realcoolvideos.com/wp-content/uploads/2016/12/headaches-doctor.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("http://cdn.realcoolvideos.com/wp-content/uploads/2016/12/headaches-doctor.jpg");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #009688;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+</style>
+
+
+
+
+<!--      contacts    -->
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card123 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  display:inline-block;
+  font-family: arial;
+ 
+}
+
+.container123 {
+  padding: 0 16px;
+}
+
+.container123::after {
+  content: "";
+  clear: both;
+  display: inline-block;
+}
+
+.title123 {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+
+
+<style>
+
+#wrapper {
+     width: 1005px;
+     margin: 0 auto;
+}
+#leftcolumn, #rightcolumn {
+    border: 1px solid white;
+    float: left;
+    min-height: 450px;
+    color: white;
+}
+#leftcolumn {
+     width: 250px;
+     background-color: #111;
+}
+#rightcolumn {
+     width: 750px;
+     background-color: #777;
+}
+
+</style>
+
+
+
+
+
+<!--          -->
+
+
+<body class="w3-content" style="max-width:1300px"  ng-app="firstApplication">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bgimg-1">
+  <div class="caption">
+    <span class="border" style="font-family: 'Impact';font-size:55px">&nbsp&nbsp&nbsp&nbsp&nbspV4U&nbsp&nbsp&nbsp&nbsp&nbsp</span> 
+
+  </div>
+</div>
+
+<div style="color: #1a3844;background-color:white;text-align:center;padding:10px 10px;text-align: justify;">
+  <h3 style="text-align:center;">GET CURED HERE</h3>
+
+   <div class="section white">
 <!-- First Grid: Logo & About -->
 	<div class="w3-row">
-	  <div class="card w3-half w3-red w3-container w3-center" style="height:1200px">
-	    <div class="w3-padding-64">
-	      <h1>My Logo</h1>
-	    </div>
-	    <div class="w3-padding-64">
-	      <a href="#" class="w3-button w3-red w3-block w3-hover-blue-grey w3-padding-16">Home</a>
-	      <a href="#work" class="w3-button w3-red w3-block w3-hover-teal w3-padding-16">My Work</a>
-	      <a href="#work" class="w3-button w3-red w3-block w3-hover-dark-grey w3-padding-16">Resume</a>
-	      <a href="#contact" class="w3-button w3-red w3-block w3-hover-brown w3-padding-16">Contact</a>
-	    </div>
+	  <div class="card w3-half w3-teal w3-container w3-center" style="height:900px">
+	    
+	    
+
+
+<br>
+
+<div class="w3-container">
+  <div class="w3-card-4" style="width:100%;">
+    <header class="w3-container w3-white">
+      <h1>SEARCH</h1>
+    </header>
+
+    <div class="w3-container">
+      <div class="w3-padding-64" align="center">
+	      <form method="post" action="/search" class="w3-container">
+	      	<input class="w3-input w3-border w3-animate-input" name="symptoms" type="text" style="width:50%;text-align:center">
+        </form>
+
+    </div>
+
+  </div>
+</div>
+</div>
+<br>
+
+<!-- chips   -->
+
+
+<div ng-controller="contactsChipController as ctrl" layout="column" ng-cloak>
+         <md-content class="md-padding autocomplete" layout="column">
+            <md-contact-chips
+               ng-model="ctrl.contacts"
+               md-contacts="ctrl.querySearch($query)"
+               md-contact-name="name"
+               md-require-match="true"
+               md-highlight-flags="i"
+               filter-selected="ctrl.filterSelected"
+               placeholder="CHOOSE ONE">
+            </md-contact-chips>
+            <md-list class="fixedRows">
+               <md-subheader class="md-no-sticky">CATEGORIES</md-subheader>
+               <md-list-item class="md-2-line contact-item" ng-repeat="(index, contact) in ctrl.allContacts"
+                  ng-if="ctrl.contacts.indexOf(contact) < 0">
+                  <div class="md-list-item-text compact">
+                     <h3>{{contact.name}}</h3>
+                     
+                  </div>
+               </md-list-item>
+               <md-list-item class="md-2-line contact-item selected" ng-repeat="(index, contact) in ctrl.contacts">
+                  <div class="md-list-item-text compact">
+                     <h3>{{contact.name}}</h3>
+                     
+                  </div>
+               </md-list-item>
+            </md-list>
+         </md-content>
+	</div>
+
+
+<!-- /chips  -->
+
+
+
 	  </div>
-	  <div class="card w3-half w3-white w3-container" style="height:1200px">
+	  <div class="card w3-half w3-white w3-container" style="height:900px">
 	  <ul id="tabs-swipe-demo" class="tabs w3-white">
-	    <li class="tab col s4 "><a class="active" href="#test-swipe-1">Login</a></li>
-	    <li class="tab col s4"><a  href="#test-swipe-2">Register</a></li>
+	    <li class="tab col s4 "><a class="active" href="#test-swipe-1" style="color:#009688">Login</a></li>
+	    <li class="tab col s4"><a  href="#test-swipe-2" style="color:#009688">Register</a></li>
 	  </ul>
 	  <div class="row">
-	    <div id="test-swipe-1" class="w3-padding-64 w3-padding-large red-text">
+	    <div id="test-swipe-1" class="w3-padding-64 w3-padding-large" style="color:#009688">
 	      <h1>Login</h1>
 	      <p class="w3-opacity">Proceed</p>
 	      <form class="w3-container w3-card-2 w3-padding-32 w3-white" action="/users/login" method="post">
@@ -43,11 +346,11 @@
 	          <label>Password</label>
 	          <input class="w3-input" style="width:100%;" type="text" required name="password">
 	        </div>
-	        <button type="button" class="w3-button w3-teal w3-right">Send</button>
+	        <button type="submit" class="w3-button w3-teal w3-right">Send</button>
 	      </form>
 	    </div>
 	  </div>
-	  <div id="test-swipe-2" class="w3-padding-64 w3-padding-large red-text">
+	  <div id="test-swipe-2" class="w3-padding-64 w3-padding-large" style="color:#009688">
 	      <h1>Sign Up</h1>
 	      <p class="w3-opacity">Enter Your Details</p>
 	      <form method="post" class="w3-container w3-card-2 w3-padding-32 w3-white" action="/users/register">
@@ -83,11 +386,144 @@
 	  </div>
 	  </div>          
 	</div>
+</div>
+</div>
+
+<div class="bgimg-2">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">LESS HEIGHT</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#009688;text-align:center;padding:50px 80px;text-align: justify;">
+    <p></p>
+
+    <!--      -->
+
+<div class="section white" >
+<!-- First Grid: Logo & About -->
+
+	  
+	    <div class="w3-padding-64">
+	      <h1>My Logo</h1>
+	    </div>
+ 
+<div style="margin-left:105px;"> 
+
+
+<div class="card123">
+  <img src="https://www.iaspaper.net/wp-content/uploads/2017/01/Doctor.jpg" alt="John" style="width:100%">
+  <div class="container123">
+    <h1>Salima Begum</h1>
+    <p class="title123">CEO & Founder, Example</p>
+    <p>Harvard University</p>
+    <div style="margin: 24px 0;">
+      <a href="#"><i class="fa fa-dribbble"></i></a> 
+      <a href="#"><i class="fa fa-twitter"></i></a>  
+      <a href="#"><i class="fa fa-linkedin"></i></a>  
+      <a href="#"><i class="fa fa-facebook"></i></a> 
+   </div>
+   <p><button>Contact</button></p>
+
+</div>
+</div>
+
+<div class="card123">
+  <img src="https://image.freepik.com/free-photo/doctor-with-co-workers-analyzing-an-x-ray_1098-581.jpg" alt="John" style="width:100%">
+  <div class="container123">
+    <h1>Chandan Kumar</h1>
+    <p class="title123">CEO & Founder, Example</p>
+    <p>Harvard University</p>
+    <div style="margin: 24px 0;">
+      <a href="#"><i class="fa fa-dribbble"></i></a> 
+      <a href="#"><i class="fa fa-twitter"></i></a>  
+      <a href="#"><i class="fa fa-linkedin"></i></a>  
+      <a href="#"><i class="fa fa-facebook"></i></a> 
+   </div>
+   <p><button>Contact</button></p>
+
+</div>
+</div>
+
+<div class="card123">
+  <img src="http://blog.santamonicaedu.in/wp-content/uploads/2016/01/Dubai-Doctors-Directory-Dubai-UAE.jpg" alt="John" style="width:100%">
+  <div class="container123">
+    <h1>Shivani Gadkari</h1>
+    <p class="title123">CEO & Founder, Example</p>
+    <p>Harvard University</p>
+    <div style="margin: 24px 0;">
+      <a href="#"><i class="fa fa-dribbble"></i></a> 
+      <a href="#"><i class="fa fa-twitter"></i></a>  
+      <a href="#"><i class="fa fa-linkedin"></i></a>  
+      <a href="#"><i class="fa fa-facebook"></i></a> 
+   </div>
+   <p><button>Contact</button></p>
+
+</div>
+</div>
+
+
+</div>
+
+	          
+	
 </div>	
+</div>
+</div>
+
+
+    <!--     -->
+
+ 
+
+<div class="bgimg-3">
+  <div class="caption">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#009688;text-align:center;padding:50px 80px;text-align: justify;">
+    <p>  </p>
+  </div>
+</div>
+
+<div class="bgimg-1">
+  <div class="caption">
+    <span class="border" >COOL!</span>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--                   -->
+
+
+<!--       -->
+
 
 
 <!-- Footer -->
- <footer class="page-footer red">
+ <footer class="page-footer w3-teal">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -112,8 +548,11 @@
             </div>
           </div>
         </footer>
+
+
 <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      
       <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
 <script type="text/javascript">
